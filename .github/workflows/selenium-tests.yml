@@ -9,7 +9,7 @@ on:
     suite:
       description: 'Choose automation suite: RegressionSuite, SmokeSuite, SanitySuite'
       required: true
-      default: "RegressionSuite"
+      default: RegressionSuite
 
 jobs:
   build:
@@ -24,9 +24,8 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-          cache: "maven"
           server-id: github
           settings-path: ${{ github.workspace }}
 
       - name: Run automation suite
-        run: mvn clean install -DsuiteXmlFile=suites/${{ github.events.inputs.name }} -PCustomSuite
+        run: mvn clean install -DsuiteXmlFile=suites/${{ github.events.inputs.suite }} -PCustomSuite
