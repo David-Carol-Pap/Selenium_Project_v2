@@ -5,54 +5,28 @@ name: Maven Package
 
 on:
  workflow_dispatch:
-  inputs:
-   suite:
-    description: 'Choose automation suite: RegressionSuite, SmokeSuite, SanitySuite'
-    required: true
-    type: choice
-    default: "RegressionSuite"
-    options:
-      - "RegressionSuite"
-      - "SmokeSuite"
-      - "SanitySuite"
+   inputs:
+    suite:
+      description: 'Choose automation suite: RegressionSuite, SmokeSuite, SanitySuite'
+      required: true
+      default: "RegressionSuite"
 
-   browser:
-    description: 'Chose browser suite: chrome, edge, firefox'
-    required: true
-    type: choice
-    default: "chrome"
-    options:
-      - "chrome"
-      - "edge"
-      - "firefox"
 jobs:
   build:
-    runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
+    runs-on: ubuntu-latest
+    permissions: write-all
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: "maven"
+          server-id: github
+          settings-path: ${{ github.workspace }}
 
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'
-        distribution: 'temurin'
-        cache: "maven"
-
-    - name: Show Java and Maven versions
-      run: |
-        java --version
-        mvn --version
-
-    - name: Run automation suite
-      run: mvn --batch-mode
-           --no-transfer-progress
-           clean verify
-           -PCustomSuite
-           -DciCd=true
-           -Dbrowser=${{ inputs.browser }}
-           -DsuiteXmlFile=suites/${{ inputs.suite }}
+      - name: Run automation suite
+        run: mvn clean install -DsuiteXmlFile=suites/${{ github.events.inputs.name }} -PCustomSuite
