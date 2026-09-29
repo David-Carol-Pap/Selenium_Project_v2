@@ -24,7 +24,7 @@ public class Elements_Buttons {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,400)");
-        WebElement listButtonField = driver.findElement(By.xpath("//li[@id='item-4']/span[text()='Buttons']"));
+        WebElement listButtonField = driver.findElement(By.xpath("//li[@id='item-4']//span[normalize-space()='Buttons']"));
         listButtonField.click();
         
 

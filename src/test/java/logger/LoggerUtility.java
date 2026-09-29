@@ -47,7 +47,7 @@ public class LoggerUtility {
        String methodName=Thread.currentThread().getStackTrace()[2].getMethodName();
        return className + ", " + methodName + "==>";
     }
-    // metoda care ea toate logurile si le pune intr-un singur fisier
+    // metoda care ia toate logurile si le pune intr-un singur fisier
 public static void mergeLogFileIntoOne(){
 
     // create instance of directory

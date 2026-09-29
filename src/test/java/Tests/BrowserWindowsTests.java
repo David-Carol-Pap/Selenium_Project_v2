@@ -21,31 +21,5 @@ public class BrowserWindowsTests extends Hooks{
         browserWindowsPage.newTab();
         browserWindowsPage.newWidows();
 
-
-
-//        WebElement newTab = getDriver().findElement(By.id("tabButton"));
-//        elementsMethods.clickOnElements(newTab);
-//        // Schimba foculus seleniniumului pe nou tab
-//        windowsMethods.switchToOpenTabs();
-//        // verificare text in noul tab
-//        WebElement newSamplePage = getDriver().findElement(By.id("sampleHeading"));
-//        System.out.println("Textul from the new tab is " + newSamplePage.getText());
-//        windowsMethods.close();
-
-       // Schimba foculus seleniniumului pe tabul initial
-//        windowsMethods.swithcnToMainTab();
-//
-
-//        // Schimba foculus seleniniumului pe noul Window
-//        WebElement newWindow = getDriver().findElement(By.id("windowButton"));
-//        newWindow.click();
-//        windowsMethods.switchToOpenWindow();
-//        WebElement newWindowSamplePage = getDriver().findElement(By.id("sampleHeading"));
-//        System.out.println("Textul from the new window is " + newWindowSamplePage.getText());
-//        getDriver().close();
-//
-//        // Schimba foculus seleniniumului pe window-ul initial
-//        windowsMethods.switchToMainWindow();
-
     }
 }

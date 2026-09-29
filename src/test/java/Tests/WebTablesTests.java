@@ -1,10 +1,15 @@
 package Tests;
 
+import ObjectData.WebTableEntity;
 import Pages.CommonPage;
 import Pages.HomePage;
 import Pages.WebTablePage;
 import ShareData.Hooks;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.JsonReader;
+
+import java.util.List;
 
 public class WebTablesTests extends Hooks {
 
@@ -13,38 +18,70 @@ public class WebTablesTests extends Hooks {
     public WebTablePage webTablePage;
 
     @Test
-    public void automationMethods() {
+    public void addAndVerifyEntitiesonPages() {
+        HomePage homePage =
+                new HomePage(getDriver());
 
-        webTablePage=new WebTablePage(getDriver());
-        homePage = new HomePage(getDriver());
-        commonPage = new CommonPage(getDriver());
+        CommonPage commonPage =
+                new CommonPage(getDriver());
+
+        WebTablePage webTablePage =
+                new WebTablePage(getDriver());
 
         homePage.GoToDesiredMeniu("Elements");
         commonPage.GoToDesiredSubMeniu("Web Tables");
-        webTablePage.fillRegisterForm("Raduu", "Chindris", "radu1@radu5.com", "44", "3000", "IT");
 
+        int initialNumberOfRows =
+                webTablePage.getNumberOfRowsOnCurrentPage();
 
-//        //  Comparare tabel initial cu cel dupa introducere nou record
-////        List<WebElement> webTableNou = driver.findElements(By.xpath("//div[@class='rt-tbody'] /div/div[@class='rt-tr -even'or@class='rt-tr -odd']"));
-////        Integer sizeDupaIntroducereNouRecord = webTableNou.size();
-////        System.out.println("Nr de element in tabel dupa introducere nou record este  " + sizeDupaIntroducereNouRecord);
-////
-////        Assert.assertTrue(actualTableSize + 1==sizeDupaIntroducereNouRecord);
-//
-//
-////        Integer expectedTableSize = actualTableSize + 1;
-////        Assert.assertEquals(tableElements.size(),expectedTableSize);
-//
-//        List<WebElement> expectedTableElements = driver.findElements(By.xpath("//div[@class='rt-tbody']/div/div[@class='rt-tr -even' or @class='rt-tr -odd']"));
-//        Integer expectedTableSize = actualTableSize + 1;
-//        Assert.assertEquals(expectedTableElements.size(), expectedTableSize);
-//        String actualTableValue = expectedTableElements.get(3).getText();
-//        Assert.assertTrue(actualTableValue.contains(lastNameValue));
-//        Assert.assertTrue(actualTableValue.contains(firstNameValue));
-//        Assert.assertTrue(actualTableValue.contains(emailValue));
-//        Assert.assertTrue(actualTableValue.contains(ageValue));
-//        Assert.assertTrue(actualTableValue.contains(salaryValue));
-//        Assert.assertTrue(actualTableValue.contains(departmentValue));
-    }
+        List<WebTableEntity> entities =
+                JsonReader.readWebTableEntities(
+                        "src/test/resources/inputData/webTableData.json"
+                );
+
+        int expectedTotalEntities =
+                initialNumberOfRows + entities.size();
+
+        int expectedTotalPages =
+                webTablePage.getExpectedNumberOfPages(
+                        expectedTotalEntities
+                );
+
+        webTablePage.addEntities(entities);
+
+        Assert.assertEquals(
+                webTablePage.getTotalPages(),
+                expectedTotalPages,
+                "The total number of pages is incorrect"
+        );
+
+        Assert.assertEquals(
+                webTablePage.getCurrentPageNumber(),
+                expectedTotalPages,
+                "The driver is not on the last page"
+        );
+
+        int expectedRowsOnLastPage =
+                expectedTotalEntities % WebTablePage.ROWS_PER_PAGE;
+
+        if (expectedRowsOnLastPage == 0) {
+            expectedRowsOnLastPage =
+                    WebTablePage.ROWS_PER_PAGE;
+        }
+
+        Assert.assertEquals(
+                webTablePage.getNumberOfRowsOnCurrentPage(),
+                expectedRowsOnLastPage,
+                "The last page has an incorrect number of rows"
+        );
+
+        WebTableEntity lastEntity =
+                entities.get(entities.size() - 1);
+
+        Assert.assertTrue(
+                webTablePage.isEntityDisplayed(lastEntity),
+                "The last entity is not displayed on the last page"
+        );
+        }
 }
 

@@ -35,16 +35,7 @@ public class AlertMethods {
     public void interrectWithConfirmAlert() {
         Alert alertConfirm = driver.switchTo().alert();
         alertConfirm.dismiss();
-
     }
-
 }
-
-
-//        WebElement promtButtonElement = driver.findElement(By.id("promtButton"));
-//        promtButtonElement.click();
-//        Alert promtButton = driver.switchTo().alert();
-//        promtButton.sendKeys("Radu Chindris");
-//        promtButton.accept();
 
 

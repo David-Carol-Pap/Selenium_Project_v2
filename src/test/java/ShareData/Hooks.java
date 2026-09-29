@@ -8,26 +8,39 @@ import org.testng.annotations.BeforeMethod;
 
 public class Hooks extends ShareData {
     public String testName;
-    @BeforeMethod
+
+    @BeforeMethod(alwaysRun = true)
     public void prepareEnvironment() {
-        testName=this.getClass().getSimpleName();
+        testName =
+                getClass().getSimpleName();
+
         LoggerUtility.startTestcase(testName);
+
         prepareBrowser();
     }
 
-    @AfterMethod
-    public void clearEnvironment(ITestResult result) {
-        if(result.getStatus()==ITestResult.FAILURE){
-            LoggerUtility.errorLog(result.getThrowable().getMessage());
+    @AfterMethod(alwaysRun = true)
+    public void clearEnvironment(
+            ITestResult result
+    ) {
+        try {
+            if (result.getStatus()
+                    == ITestResult.FAILURE
+                    && result.getThrowable() != null) {
+
+                LoggerUtility.errorLog(
+                        result.getThrowable()
+                                .getMessage()
+                );
+            }
+        } finally {
+            clearBrowser();
+            LoggerUtility.endTestCase(testName);
         }
-        clearBrowser();
-        //pentru moment toate sunt bune
-        LoggerUtility.endTestCase(testName);
     }
 
-    @AfterSuite
-    public void finalizeLogFile (){
+    @AfterSuite(alwaysRun = true)
+    public void finalizeLogFile() {
         LoggerUtility.mergeLogFileIntoOne();
     }
-
 }

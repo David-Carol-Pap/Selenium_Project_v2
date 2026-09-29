@@ -27,23 +27,6 @@ public class RecursivitateTests extends Hooks {
             WebElement webElement = listaElement.get(i);
             System.out.println("Numarul elementului este:" + webElement.getText());
         }
-  // Metoda predefinata
-//        for (int i = 1; i < listaElement.size() - 1; i++) {
-//            WebElement webElement = listaElement.get(i);
-//            WebElement urmatorulElement = listaElement.get(i++);
-//            System.out.println("Numarul elementului este " + webElement.getText());
-//            actions.clickAndHold(webElement) //metode predefinite
-//                    .moveToElement(urmatorulElement)
-//                    .release()
-//                    .build()
-//                    .perform();
-//        }
-//        try {
-//            Thread.sleep(100);
-//        } catch (InterruptedException e) {
-//
-//            e.printStackTrace();
-//        }
     }
 
 }

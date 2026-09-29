@@ -1,32 +1,31 @@
 package ShareData;
 
 import ShareData.browser.BrowserFactory;
-import configFile.ConfigFile;
-import configFile.configNode.ConfigurationNode;
-import logger.LoggerUtility;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
+import java.util.Locale;
 
 public class ShareData {
-    private WebDriver driver;
 
+    protected WebDriver driver;
 
-    public void prepareBrowser() {
-        driver = new BrowserFactory().getBrowserFactory();
-        LoggerUtility.infoLog("The browser was open with success");
+    protected void prepareBrowser() {
+        BrowserFactory browserFactory =
+                new BrowserFactory();
+
+        driver =
+                browserFactory.getBrowserFactory();
     }
 
+    protected void clearBrowser() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
 
-    public void clearBrowser() {driver.quit();
-        LoggerUtility.infoLog("The browser was closed with success");}
-
-    public WebDriver getDriver() {
+    protected WebDriver getDriver() {
         return driver;
     }
 }

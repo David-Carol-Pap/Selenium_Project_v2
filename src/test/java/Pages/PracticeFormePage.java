@@ -13,16 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PracticeFormePage extends CommonPage {
-    //  public WebDriver driver;
-//    public ElementsMethods elementsMethods;
-//    public JavaScriptMethods javaScriptMethods;
-
-//    public PracticeFormePage(WebDriver driver) {
-//        this.elementsMethods = new ElementsMethods(driver);
-//        this.driver = driver;
-//        this.javaScriptMethods = new JavaScriptMethods(driver);
-//        PageFactory.initElements(driver, this);
-//    }
 
     @FindBy(id = "firstName")
     private WebElement firstNameElement;
@@ -92,11 +82,11 @@ public class PracticeFormePage extends CommonPage {
     }
 
     public void completeFirstRegion(PracticeFormObject practiceFormObject) {
-        elementsMethods.fillElement(firstNameElement, practiceFormObject.getFirstName());
-        elementsMethods.fillElement(lastNameElement, practiceFormObject.getLastName());
-        elementsMethods.fillElement(emailElement, practiceFormObject.getEmail());
-        elementsMethods.fillElement(adressElement, practiceFormObject.getAddress());
-        elementsMethods.fillElement(mobilePhoneElement, practiceFormObject.getMobile());
+        elementsMethods.clearAndFillElement(firstNameElement, practiceFormObject.getFirstName());
+        elementsMethods.clearAndFillElement(lastNameElement, practiceFormObject.getLastName());
+        elementsMethods.clearAndFillElement(emailElement, practiceFormObject.getEmail());
+        elementsMethods.clearAndFillElement(adressElement, practiceFormObject.getAddress());
+        elementsMethods.clearAndFillElement(mobilePhoneElement, practiceFormObject.getMobile());
     }
 
     public void commpleteGender(PracticeFormObject practiceFormObject) {
@@ -153,11 +143,11 @@ public class PracticeFormePage extends CommonPage {
          javaScriptMethods.forceClick(stateElement);
    //     elementsMethods.waitVisibilityElement(stateElement);
     //    elementsMethods.clickOnElements(stateElement);
-        elementsMethods.fillElement(stateElement, practiceFormObject.getState());
+        elementsMethods.clearAndFillElement(stateElement, practiceFormObject.getState());
         stateElement.sendKeys(Keys.ENTER);
         javaScriptMethods.forceClick(cityElement);
      //   elementsMethods.clickOnElements(cityElement);
-        elementsMethods.fillElement(cityElement, practiceFormObject.getCity());
+        elementsMethods.clearAndFillElement(cityElement, practiceFormObject.getCity());
         cityElement.sendKeys(Keys.ENTER);
     }
 }

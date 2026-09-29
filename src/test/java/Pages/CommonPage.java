@@ -34,6 +34,5 @@ public class CommonPage {
         LoggerUtility.infoLog("The user scrolls down the page");
         elementsMethods.selectElementFromListByText(subElements, subMenu);
         LoggerUtility.infoLog("The user selects from a submenu the option with value :" + subMenu);
-      //  javaScriptMethods.javaScriptScrollPage(0, 400);
     }
 }

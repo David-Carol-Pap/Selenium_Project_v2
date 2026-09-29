@@ -1,0 +1,178 @@
+[
+  {
+    "firstName": "David",
+    "lastName": "Popescu",
+    "age": "30",
+    "email": "david.popescu@test.com",
+    "salary": "5000",
+    "department": "IT"
+  },
+  {
+    "firstName": "Andrei",
+    "lastName": "Ionescu",
+    "age": "28",
+    "email": "andrei.ionescu@test.com",
+    "salary": "4500",
+    "department": "HR"
+  },
+  {
+    "firstName": "Maria",
+    "lastName": "Georgescu",
+    "age": "35",
+    "email": "maria.georgescu@test.com",
+    "salary": "6200",
+    "department": "Finance"
+  },
+  {
+    "firstName": "Elena",
+    "lastName": "Dumitru",
+    "age": "26",
+    "email": "elena.dumitru@test.com",
+    "salary": "4100",
+    "department": "Marketing"
+  },
+  {
+    "firstName": "Cristian",
+    "lastName": "Radu",
+    "age": "40",
+    "email": "cristian.radu@test.com",
+    "salary": "7500",
+    "department": "Management"
+  },
+  {
+    "firstName": "Ioana",
+    "lastName": "Marin",
+    "age": "31",
+    "email": "ioana.marin@test.com",
+    "salary": "5300",
+    "department": "Sales"
+  },
+  {
+    "firstName": "Mihai",
+    "lastName": "Constantin",
+    "age": "29",
+    "email": "mihai.constantin@test.com",
+    "salary": "4800",
+    "department": "Support"
+  },
+  {
+    "firstName": "Alexandra",
+    "lastName": "Stan",
+    "age": "33",
+    "email": "alexandra.stan@test.com",
+    "salary": "5900",
+    "department": "QA"
+  },
+  {
+    "firstName": "Ioana1",
+    "lastName": "Marin1",
+    "age": "31",
+    "email": "ioana.marin1@test.com",
+    "salary": "5300",
+    "department": "Sales"
+  },
+  {
+    "firstName": "Mihai1",
+    "lastName": "Constantin1",
+    "age": "29",
+    "email": "mihai.constantin1@test.com",
+    "salary": "4800",
+    "department": "Support"
+  },
+  {
+    "firstName": "Alexandra1",
+    "lastName": "Stan1",
+    "age": "33",
+    "email": "alexandra.stan1@test.com",
+    "salary": "5900",
+    "department": "QA"
+  },
+  {
+    "firstName": "David",
+    "lastName": "Popescu",
+    "age": "30",
+    "email": "david.popescu@test.com",
+    "salary": "5000",
+    "department": "IT"
+  },
+  {
+    "firstName": "Andrei",
+    "lastName": "Ionescu",
+    "age": "28",
+    "email": "andrei.ionescu@test.com",
+    "salary": "4500",
+    "department": "HR"
+  },
+  {
+    "firstName": "Maria",
+    "lastName": "Georgescu",
+    "age": "35",
+    "email": "maria.georgescu@test.com",
+    "salary": "6200",
+    "department": "Finance"
+  },
+  {
+    "firstName": "Elena",
+    "lastName": "Dumitru",
+    "age": "26",
+    "email": "elena.dumitru@test.com",
+    "salary": "4100",
+    "department": "Marketing"
+  },
+  {
+    "firstName": "Cristian",
+    "lastName": "Radu",
+    "age": "40",
+    "email": "cristian.radu@test.com",
+    "salary": "7500",
+    "department": "Management"
+  },
+  {
+    "firstName": "Ioana",
+    "lastName": "Marin",
+    "age": "31",
+    "email": "ioana.marin@test.com",
+    "salary": "5300",
+    "department": "Sales"
+  },
+  {
+    "firstName": "Mihai",
+    "lastName": "Constantin",
+    "age": "29",
+    "email": "mihai.constantin@test.com",
+    "salary": "4800",
+    "department": "Support"
+  },
+  {
+    "firstName": "Alexandra",
+    "lastName": "Stan",
+    "age": "33",
+    "email": "alexandra.stan@test.com",
+    "salary": "5900",
+    "department": "QA"
+  },
+  {
+    "firstName": "Ioana1",
+    "lastName": "Marin1",
+    "age": "31",
+    "email": "ioana.marin1@test.com",
+    "salary": "5300",
+    "department": "Sales"
+  },
+  {
+    "firstName": "Mihai1",
+    "lastName": "Constantin1",
+    "age": "29",
+    "email": "mihai.constantin1@test.com",
+    "salary": "4800",
+    "department": "Support"
+  },
+  {
+    "firstName": "Alexandra1",
+    "lastName": "Stan1",
+    "age": "33",
+    "email": "alexandra.stan1@test.com",
+    "salary": "5900",
+    "department": "QA"
+  }
+  ]

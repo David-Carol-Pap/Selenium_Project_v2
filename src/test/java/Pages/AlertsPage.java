@@ -6,18 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class AlertsPage extends CommonPage {
-    //   public WebDriver driver;
-//    public ElementsMethods elementsMethods;
-//    public JavaScriptMethods javaScriptMethods;
-    // public AlertMethods alertMethods;
-
-//    public AlertsPage(WebDriver driver) {
-//        this.elementsMethods = new ElementsMethods(driver);
-//        this.driver = driver;
-//        this.javaScriptMethods = new JavaScriptMethods(driver);
-//        this.alertMethods=new AlertMethods(driver);
-//        PageFactory.initElements(driver, this);
-//    }
 
 
     @FindBy(id = "alertButton")

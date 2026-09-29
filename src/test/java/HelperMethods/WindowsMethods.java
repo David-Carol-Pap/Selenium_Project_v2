@@ -16,6 +16,7 @@ public class WindowsMethods {
         List<String> tabList = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabList.get(1));
     }
+
     public void switchToMain(){
         List<String> tabList = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabList.get(0));
@@ -31,9 +32,6 @@ public class WindowsMethods {
     public void switchToMainWindow (){
         switchToMain();
     }
-
-
-
 
     public void close (){
         driver.close();
