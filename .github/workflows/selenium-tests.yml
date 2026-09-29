@@ -7,7 +7,7 @@ on:
  workflow_dispatch:
    inputs:
     suite:
-      description: 'Choose automation suite: RegressionSuite, SmokeSuite, SanitySuite'
+      description: 'Choose automation suite: RegressionSuite, SmokeSuite'
       required: true
       default: RegressionSuite
 
@@ -28,4 +28,4 @@ jobs:
           settings-path: ${{ github.workspace }}
 
       - name: Run automation suite
-        run: mvn clean install -DsuiteXmlFile=suites/${{ github.events.inputs.suite }} -PCustomSuite
+        run: mvn clean install -DsuiteXmlFile=suites/${{ github.event.inputs.suite }} -PCustomSuite
