@@ -1,5 +1,6 @@
 package HelperMethods;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,6 +23,26 @@ public class ElementsMethods {
     }
 
     public void clickOnElements(WebElement element) {
+        WebDriverWait wait =
+                new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(
+                ExpectedConditions.visibilityOf(element)
+        );
+
+        JavascriptExecutor javascriptExecutor =
+                (JavascriptExecutor) driver;
+
+        javascriptExecutor.executeScript(
+                "arguments[0].scrollIntoView(" +
+                        "{block: 'center', inline: 'nearest'});",
+                element
+        );
+
+        wait.until(
+                ExpectedConditions.elementToBeClickable(element)
+        );
+
         element.click();
     }
 
@@ -107,7 +128,7 @@ public class ElementsMethods {
         for (String value : values) {
             for (WebElement webElement : webElements) {
                 if (webElement.getText().equals(value)) {
-                    webElement.click();
+                    clickOnElements(webElement);
                     break;
                 }
             }

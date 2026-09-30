@@ -7,6 +7,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 
 public class Hooks extends ShareData {
+
     public String testName;
 
     @BeforeMethod(alwaysRun = true)

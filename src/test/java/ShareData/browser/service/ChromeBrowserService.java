@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
-public class ChromBrowserService implements BrowserService {
+public class ChromeBrowserService implements BrowserService {
     private WebDriver driver;
     @Override
     public void openBrowser(DriverConfigNode driverConfigNode) {

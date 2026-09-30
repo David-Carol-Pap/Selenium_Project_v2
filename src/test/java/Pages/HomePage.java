@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class HomePage extends CommonPage {
-    //Indetificam WebElemente-le specifice pt pagina asta
     @FindBy(xpath = "//h5")
    private List<WebElement> elements;
 
