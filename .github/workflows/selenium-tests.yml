@@ -10,10 +10,10 @@ on:
       description: 'Choose automation suite: RegressionSuite, SmokeSuite'
       required: true
       default: RegressionSuite
-      browser:
-        description: 'Choose browser suite: chrome, edge, firefox'
-        required: true
-        default: chrome
+    browser:
+      description: 'Choose browser suite: chrome, edge, firefox'
+      required: true
+      default: chrome
 
 jobs:
   build:
