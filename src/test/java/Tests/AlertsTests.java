@@ -4,6 +4,7 @@ import Pages.AlertsPage;
 import Pages.CommonPage;
 import Pages.HomePage;
 import ShareData.Hooks;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
 public class AlertsTests extends Hooks {
@@ -18,6 +19,11 @@ public class AlertsTests extends Hooks {
         homePage = new HomePage(getDriver());
         homePage.GoToDesiredMeniu("Alerts, Frame & Windows");
         commonPage.GoToDesiredSubMeniu("Alerts");
+
+        JavascriptExecutor javascriptExecutor =
+                (JavascriptExecutor) driver;
+
+        javascriptExecutor.executeScript("window.scrollTo(0, 0);");
 
         alertsPage.alertOkElements();
         alertsPage.alertDelayElements();

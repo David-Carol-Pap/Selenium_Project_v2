@@ -17,7 +17,7 @@ public class PropertyUtility {
         properties = new Properties();
 
 
-// nu toate testele au data de test de intordus de asta punem try/cathc
+// nu toate testele au data de test de introdus de asta punem try/catch
         try {
             FileInputStream fileInputStream=new FileInputStream("src/test/resources/inputData/"+testName+"Data.properties");
             properties.load(fileInputStream);

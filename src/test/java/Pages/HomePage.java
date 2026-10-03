@@ -18,16 +18,18 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//p[text()='Consent']")
    private WebElement consentElement;
 
-//    WebDriver driver;
-//    ElementsMethods elementsMethods;
-//    JavaScriptMethods javaScriptMethods;
-
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
     public void GoToDesiredMeniu(String menu) {
 
+        /*
+        try {
+            elementsMethods.clickOnElements(consentElement);
+            LoggerUtility.infoLog("The user clicks on consentElement");
+        } catch (NoSuchElementException ignored) {}
+ */
         javaScriptMethods.javaScriptScrollPage(0, 400);
         LoggerUtility.infoLog("The user scrolls down the page");
         elementsMethods.selectElementFromListByText(elements, menu);

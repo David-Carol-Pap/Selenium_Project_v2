@@ -140,13 +140,13 @@ public class PracticeFormePage extends CommonPage {
     }
 
     public void selectStateAndCity(PracticeFormObject practiceFormObject) {
-         javaScriptMethods.forceClick(stateElement);
+      //   javaScriptMethods.forceClick(stateElement);
    //     elementsMethods.waitVisibilityElement(stateElement);
-    //    elementsMethods.clickOnElements(stateElement);
+        elementsMethods.clickOnElements(stateElement);
         elementsMethods.clearAndFillElement(stateElement, practiceFormObject.getState());
         stateElement.sendKeys(Keys.ENTER);
-        javaScriptMethods.forceClick(cityElement);
-     //   elementsMethods.clickOnElements(cityElement);
+     //   javaScriptMethods.forceClick(cityElement);
+          elementsMethods.clickOnElements(cityElement);
         elementsMethods.clearAndFillElement(cityElement, practiceFormObject.getCity());
         cityElement.sendKeys(Keys.ENTER);
     }

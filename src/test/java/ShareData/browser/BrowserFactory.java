@@ -88,8 +88,6 @@ public class BrowserFactory {
         String ciCd = System.getProperty("ciCd");
         String browser = System.getProperty("browser").toLowerCase(Locale.ROOT);
 
-        System.out.println("UITA_TE AICI " + browser);
-
         ConfigurationNode configurationNode = ConfigFile.createConfingNode(ConfigurationNode.class);
 
         if(Boolean.parseBoolean(ciCd))

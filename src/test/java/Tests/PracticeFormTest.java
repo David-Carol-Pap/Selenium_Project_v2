@@ -33,7 +33,6 @@ public class PracticeFormTest extends Hooks {
 
         practiceFormePage.setDateOfBirth("July", "2023", "22");
 
-     //   practiceFormePage.selectStateAndCity("NCR", "Delhi");// !!!! Nu e ok, nu e lista cu toate valorile e indentificat doar elementul
         practiceFormePage.selectStateAndCity(practiceFormObject);
 
     }

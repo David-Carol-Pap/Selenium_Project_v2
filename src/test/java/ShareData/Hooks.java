@@ -13,7 +13,7 @@ public class Hooks extends ShareData {
     @BeforeMethod(alwaysRun = true)
     public void prepareEnvironment() {
         testName =
-                getClass().getSimpleName();
+                this.getClass().getSimpleName();
 
         LoggerUtility.startTestcase(testName);
 

@@ -4,7 +4,7 @@
     <test name="SmokeSuite">
 <classes>
     <class name="Tests.AlertsTests"/>
-    <class name="Tests.BrowserWindowsTests"/>
+    <class name="Tests.FramesTests"/>
 </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

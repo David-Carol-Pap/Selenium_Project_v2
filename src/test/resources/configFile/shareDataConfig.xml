@@ -3,7 +3,7 @@
     <DriverConfig>
         <LocalBrowser>chrome</LocalBrowser>
         <Url>https://demoqa.com/</Url>
-        <HeadLess>--headless</HeadLess>
+        <HeadLess></HeadLess>
         <Resolution>--window-size=1920,1080</Resolution>
         <Gpu>--disable-gpu</Gpu>
         <Extensions>--disable-extensions</Extensions>

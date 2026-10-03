@@ -10,7 +10,7 @@ import java.io.FileReader;
 import java.io.PrintWriter;
 
 public class LoggerUtility {
-    //pathul unde voi salva fisierie de logurile
+    //pathul unde voi salva fisierele de loguri
     private static final String suiteLogPath = "target/logs/suite/";
 
     // patul unde voi genre fisierul mare cu toate logurile
@@ -23,13 +23,13 @@ public class LoggerUtility {
 
     public static synchronized void startTestcase(String testName){
         ThreadContext.put("threadName", testName);
-        logger.info("==============Execution strated: " + testName + "====================");
+        logger.info("==============Execution started: " + testName + "====================");
     }
 
-    // metodat care se asigura ca sa terminat un test
+    // metodat care se asigura ca a terminat un test
 
     public static synchronized  void endTestCase(String testName){
-        logger.info("==============Execution finish : " + testName + "====================");
+        logger.info("==============Execution finished : " + testName + "====================");
     }
 
     // metoda care se asigura ca adauga un entry ca si log
